@@ -1,0 +1,42 @@
+<idea-plugin>
+  <id>com.zxhx.markbook.id</id>
+  <name>MarkBook</name>
+  <version>1.0</version>
+  <vendor email="1780606227@qq.com" url="http://www.zxhx.com">zxhx</vendor>
+
+  <description><![CDATA[
+      这是一款可以帮助程序在阅读代码是添加笔记,并将笔记生成文档的插件。<br>
+      <em>MarkDown文档</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      第一版，包含笔记添加和文档生成的主体功能<br>
+      <em>仅支持生成Markdown形式笔记。</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <toolWindow id="MarkBookWindown"
+                secondary="true"
+                anchor="right" factoryClass="com.zhixinhuixue.windows.NoteListWindowFactory" icon="/markbook/pluginIcon.svg">
+
+    </toolWindow>
+  </extensions>
+
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="MB_PopupAciton" class="com.zhixinhuixue.action.PopupAction" text="添加文档" description="添加文档">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
