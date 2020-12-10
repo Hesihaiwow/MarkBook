@@ -24,9 +24,9 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
-    <toolWindow id="MarkBookWindown"
+    <toolWindow id="MarkBook"
                 secondary="true"
-                anchor="right" factoryClass="com.zhixinhuixue.windows.NoteListWindowFactory" icon="/markbook/pluginIcon.svg">
+                anchor="right" factoryClass="com.zhixinhuixue.windows.NoteListWindowFactory" icon="">
 
     </toolWindow>
   </extensions>

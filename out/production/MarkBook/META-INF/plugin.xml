@@ -24,7 +24,13 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <!-- Add your extensions here -->
+    <toolWindow id="MarkBook"
+                secondary="true"
+                anchor="right" factoryClass="com.zhixinhuixue.windows.NoteListWindowFactory" icon="">
+
+    </toolWindow>
   </extensions>
+
 
   <actions>
     <!-- Add your actions here -->

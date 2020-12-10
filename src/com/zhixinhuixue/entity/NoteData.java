@@ -22,11 +22,12 @@ public class NoteData {
      */
     private String fileType;
 
-    public NoteData(String title, String content, String currentFileName, String selectedText) {
+    public NoteData(String title, String content, String currentFileName, String fileType,String selectedText) {
         this.title = title;
         this.content = selectedText;
         this.fileName = currentFileName;
         this.mark = content;
+        this.fileType = fileType;
     }
 
 

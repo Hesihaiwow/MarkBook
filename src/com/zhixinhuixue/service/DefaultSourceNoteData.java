@@ -13,9 +13,10 @@ public class DefaultSourceNoteData implements SourceNoteData {
 
     public String filePath;
 
-    public DefaultSourceNoteData(String topic,List<NoteData> noteList){
+    public DefaultSourceNoteData(String topic,String filePath,List<NoteData> noteList){
         this.topic = topic;
         this.noteList = noteList;
+        this.filePath = filePath;
     }
 
     @Override

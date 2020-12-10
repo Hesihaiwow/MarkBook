@@ -1,6 +1,7 @@
 package com.zhixinhuixue.dialog;
 
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.ui.MessageDialogBuilder;
 import com.intellij.ui.EditorTextField;
 import com.zhixinhuixue.entity.DataCenter;
 import com.zhixinhuixue.entity.DataConvert;
@@ -24,7 +25,7 @@ public class AddNoteDialog extends DialogWrapper {
     public AddNoteDialog() {
         super(true);
         init();
-        setTitle("添加笔记注释");
+        setTitle("添加笔记");
     }
 
     @Nullable
@@ -42,7 +43,7 @@ public class AddNoteDialog extends DialogWrapper {
     @Override
     protected JComponent createSouthPanel() {
         JPanel panel = new JPanel(new FlowLayout());
-        JButton btnAdd = new JButton("添加到笔记列表");
+        JButton btnAdd = new JButton("添加笔记");
         //按钮点击事件处理
         btnAdd.addActionListener(e -> {
             //获取标题
@@ -51,10 +52,20 @@ public class AddNoteDialog extends DialogWrapper {
             String mark = etfMark.getText();
 
             String currentFileName = DataCenter.CURRENT_FILE_NAME;
+            String fileType = DataCenter.CURRENT_FILE_TYPE;
             String selectedText = DataCenter.SELECTED_TEXT;
 
-            NoteData noteData = new NoteData(title, mark, currentFileName, selectedText);
+            NoteData noteData = new NoteData(title, mark, currentFileName,fileType, selectedText);
+
+            // 将笔记添加到集合中
+            DataCenter.NOTE_LIST.add(noteData);
+
+            // 将笔记添加到table中
             DataCenter.TABLE_MODEL.addRow(DataConvert.convert(noteData));
+            MessageDialogBuilder.yesNo("操作结果","添加成功!").show();
+
+            // 关闭弹窗方法
+            AddNoteDialog.this.dispose();
         });
         panel.add(btnAdd);
         return panel;

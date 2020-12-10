@@ -7,6 +7,7 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.SelectionModel;
 import com.zhixinhuixue.dialog.AddNoteDialog;
 import com.zhixinhuixue.entity.DataCenter;
+import com.zhixinhuixue.entity.NoteData;
 
 /**
  *
